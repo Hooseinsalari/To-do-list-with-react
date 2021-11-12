@@ -1,7 +1,7 @@
 import React from "react";
 import Todo from "./Todo";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, onComplete }) => {
     if(todos.length === 0){
         return(
             <div>
@@ -13,7 +13,7 @@ const TodoList = ({ todos }) => {
     <div>
       {todos.map((todo) => {
          return(
-            <Todo key={todo.id} todo={todo} />
+            <Todo key={todo.id} todo={todo} onComplete={() => onComplete(todo.id)} />
          )
       })}
     </div>

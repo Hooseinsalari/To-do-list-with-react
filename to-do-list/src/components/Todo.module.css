@@ -1,0 +1,9 @@
+.todo {
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    width: 20rem;
+    margin: 10px auto;
+}

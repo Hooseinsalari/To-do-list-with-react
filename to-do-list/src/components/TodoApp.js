@@ -14,11 +14,24 @@ const TodoApp = () => {
 
         setTodos([...todos, newTodo])
     }
+
+    const onComplete = (id) => {
+        
+        const selectedItem = todos.find((item) => item.id === id)
+        // console.log(selectedItem.isComplete)
+
+        if(selectedItem.isComplete === false){
+            return selectedItem.isComplete = true
+        }
+        
+        setTodos([...todos, selectedItem])
+    }
+
     return (
         <div>
             {console.log(todos)}
            <TodoForm inputTodo={todoHandler} />
-           <TodoList todos={todos} />
+           <TodoList todos={todos} onComplete={onComplete} />
         </div>
     );
 };

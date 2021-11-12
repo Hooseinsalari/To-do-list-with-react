@@ -1,11 +1,14 @@
 import React from 'react';
+import style from "./Todo.module.css";
 
-const Todo = ({todo}) => {
+const Todo = ({todo, onComplete}) => {
     return (
-        <div key={todo.id}>
+        <div key={todo.id} className={style.todo}>
             <p>{todo.text}</p>
-            <button>Edit</button>
-            <button>delet</button>
+            <div>
+                <button>delet</button>
+                <button onClick={onComplete}>complete</button>
+            </div>
           </div>
     );
 };
