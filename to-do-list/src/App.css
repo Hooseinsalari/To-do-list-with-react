@@ -2,6 +2,7 @@
   text-align: center;
   background-color: #f6f6f6;
   width: 50%;
-  min-height: 400px;
+  min-height: 90vh;
   margin: auto;
+  border-radius: 20px;
 }

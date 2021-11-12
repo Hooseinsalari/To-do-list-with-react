@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 
+
 const TodoApp = () => {
     const [todos, setTodos] = useState([])
     
     const todoHandler = (todoData) => {
         const newTodo = {
-            id: Math.floor(Math.random()*100),
+            id: Math.floor(Math.random()*1000),
             text: todoData,
             isComplete: false
         }
@@ -16,22 +17,25 @@ const TodoApp = () => {
     }
 
     const onComplete = (id) => {
-        
-        const selectedItem = todos.find((item) => item.id === id)
+        const index = todos.findIndex((item) => item.id === id);
+        const selectedItem = {...todos[index]}
+        selectedItem.isComplete = !selectedItem.isComplete;
         // console.log(selectedItem.isComplete)
+        const updateTodos = [...todos];
+        updateTodos[index] = selectedItem
+        setTodos(updateTodos)
+    }
 
-        if(selectedItem.isComplete === false){
-            return selectedItem.isComplete = true
-        }
+    const onDelete = (id) => {
+        const selectedItem = todos.filter((item) => item.id !== id);
+        setTodos(selectedItem)
         
-        setTodos([...todos, selectedItem])
     }
 
     return (
         <div>
-            {console.log(todos)}
            <TodoForm inputTodo={todoHandler} />
-           <TodoList todos={todos} onComplete={onComplete} />
+           <TodoList todos={todos} onComplete={onComplete} onDelete={onDelete} />
         </div>
     );
 };
