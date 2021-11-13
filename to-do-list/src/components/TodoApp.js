@@ -20,7 +20,6 @@ const TodoApp = () => {
         const index = todos.findIndex((item) => item.id === id);
         const selectedItem = {...todos[index]}
         selectedItem.isComplete = !selectedItem.isComplete;
-        // console.log(selectedItem.isComplete)
         const updateTodos = [...todos];
         updateTodos[index] = selectedItem
         setTodos(updateTodos)
@@ -32,8 +31,13 @@ const TodoApp = () => {
         
     }
 
-    const onUpdateTodo = (id) => {
-        console.log(id)
+    const onUpdateTodo = (id, newValue) => {
+        const index = todos.findIndex((item) => item.id === id);
+        const selectedItem = {...todos[index]}
+        selectedItem.text = newValue;
+        const updateTodos = [...todos];
+        updateTodos[index] = selectedItem
+        setTodos(updateTodos)
     }
 
     return (
