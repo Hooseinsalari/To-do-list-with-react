@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
-const TodoList = ({ todos, onComplete, onDelete }) => {
+const TodoList = ({ todos, onComplete, onDelete, onUpdate }) => {
 
   const [edit, setEdit] = useState({id:null, text:"" , isComplete:false})
+
+  const editTodoHandler = () => {
+    onUpdate(edit.id)
+  }
 
   const renderdTodos = () => {
     if (todos.length === 0) {
@@ -31,7 +35,7 @@ const TodoList = ({ todos, onComplete, onDelete }) => {
     );
   }
 
-  return <div>{edit.id?<TodoForm /> : renderdTodos()}</div>
+  return <div>{edit.id?<TodoForm inputTodo={editTodoHandler} /> : renderdTodos()}</div>
 };
 
 export default TodoList;

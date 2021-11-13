@@ -13,7 +13,7 @@ const TodoForm = (props) => {
             alert("enter please")
             return;
         }
-        props.inputTodo(todo)
+        props.inputTodo(todo) 
         setTodo("")
     }
     return (

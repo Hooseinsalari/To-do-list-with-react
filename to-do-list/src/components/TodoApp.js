@@ -32,10 +32,14 @@ const TodoApp = () => {
         
     }
 
+    const onUpdateTodo = (id) => {
+        console.log(id)
+    }
+
     return (
         <div>
            <TodoForm inputTodo={todoHandler} />
-           <TodoList todos={todos} onComplete={onComplete} onDelete={onDelete} />
+           <TodoList todos={todos} onComplete={onComplete} onDelete={onDelete} onUpdate={onUpdateTodo} />
         </div>
     );
 };
