@@ -1,8 +1,40 @@
 .App {
   text-align: center;
-  background-color: #f6f6f6;
-  width: 50%;
+  background-color: #b0ffdf;
+  width: 42%;
   min-height: 90vh;
   margin: auto;
   border-radius: 20px;
 }
+
+.todoFormConteiner {
+  align-items: center;
+  margin: auto;
+  background-color: #fff;
+  width: 25rem;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.todoInput {
+  width: 300px;
+  border: none;
+  outline: none;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.todoInput[type="text"] {
+  font-size: 18px;
+}
+
+.Btn {
+  align-items: center;
+  border: 2px solid #145158;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: #f1f2b5;
+}
+

@@ -1,17 +1,19 @@
 .todo {
-    background-color: aqua;
+    background-color: #145058;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
-    width: 20rem;
+    width: 25rem;
     margin: 10px auto;
     transition: all 0.5s ease-in-out;
     border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
 }
 
 .complete {
-
+    text-decoration: line-through;
     opacity: 0.5;
     transition: all 0.5s ease-in-out;
 }
